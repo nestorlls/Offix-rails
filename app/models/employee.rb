@@ -1,7 +1,8 @@
 class Employee < ApplicationRecord
   # Validations
   validates :name, presence: true, uniqueness: true
-  validates :birth_date, comparison: { less_than: 18.years.ago, message: "must be at least 18 years old" }
+  validates :birth_date,
+            comparison: { less_than: 18.years.ago, message: "must be older than 18 years" }
 
   # Associations
   belongs_to :department, counter_cache: true
