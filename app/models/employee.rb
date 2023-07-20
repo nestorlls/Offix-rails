@@ -6,4 +6,7 @@ class Employee < ApplicationRecord
 
   # Associations
   belongs_to :department, counter_cache: true
+
+  # Active storage
+  has_one_attached :avatar
 end

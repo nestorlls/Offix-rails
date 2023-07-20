@@ -4,4 +4,7 @@ class Department < ApplicationRecord
 
   # Associations
   has_many :employees, dependent: :destroy
+
+  # Active storage
+  has_one_attached :cover
 end
