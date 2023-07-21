@@ -1,0 +1,39 @@
+<%= form_with model: employee, class: 'form'  do |form| %>
+  <div class='input-form'>
+    <%= form.label :name, class: 'label' %>
+    <div>
+      <%= form.text_field :name, class: 'input'%>
+    </div>
+  </div>
+  <div class='input-form'>
+    <%= form.label :nationality, class: 'label' %>
+    <div>
+      <%= form.text_field :nationality, class: 'input'%>
+    </div>
+  </div>
+  <div class='input-form'>
+    <%= form.label :role, class: 'label' %>
+    <div>
+      <%= form.text_field :role, class: 'input'%>
+    </div>
+  </div>
+  <div class='input-form'>
+    <%= form.label :birth_date, class: 'label' %>
+    <div>
+      <%= form.date_field :birth_date, class: 'input'%>
+    </div>
+  </div>
+  <div class='input-form'>
+    <%= form.label :department_id, class: 'label' %>
+    <div>
+      <%= form.collection_select :department_id, @list_order_by_name, :id, :name, { selected: department.id }, class: 'input' %>
+    </div>
+  </div>
+  <div>
+    <%= form.label :avatar, class: 'label' %>
+    <div>
+      <%= form.file_field :avatar, accept: 'image/png, image/jpeg' %>
+    </div>
+  </div>
+  <%= form.submit class: 'btn btn-primary' %>
+<% end %>
