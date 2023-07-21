@@ -26,28 +26,31 @@ operations.cover.attach(
   filename: "op_cover"
 )
 
-Employee.create(
+emmet = Employee.create(
   name: "Emmet Bart",
   role: "Software Developer",
   department: engineering,
   nationality: "Peru",
   birth_date: 31.years.ago
 )
-Employee.create(
+emmet.avatar.attach(io: File.open("db/images/emmet.png"), filename: "emmet")
+alva = Employee.create(
   name: "Alva Galia",
   role: "Senior Software Developer",
   department: engineering,
   nationality: "Mexico",
   birth_date: 35.years.ago
 )
-Employee.create(
+alva.avatar.attach(io: File.open("db/images/alva.png"), filename: "alva")
+rico = Employee.create(
   name: "Rico Cornelius",
   role: "Apprentice",
   department: engineering,
   nationality: "Peru",
   birth_date: 21.years.ago
 )
-Employee.create(
+rico.avatar.attach(io: File.open("db/images/rico.png"), filename: "rico")
+mario = Employee.create(
   name: "Mario Testino",
   role: "Manager",
   department: marketing,
