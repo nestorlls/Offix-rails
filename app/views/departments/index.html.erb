@@ -1,18 +1,16 @@
-<section class='w-full py-8 px-4'>
-  <div class='flex flex-col justify-center w-3/4 m-auto'>
+<section class='section w-full'>
+  <div class='section-container flex flex-col justify-center'>
     <h1 class='text-2xl font-bold py-3'>Departments</h1>
-    <button class="py-2 px-6 text-white text-lg bg-slate-800 rounded-md mb-5 md:w-60 uppercase">
-      New Department
-    </button>
-    <div class='flex flex-col gap-4'>
+    <%= link_to 'New Department', new_department_path, class: 'bg-slate-700 w-full md:w-[300px] text-slate-100 py-3 px-6 uppercase rounded-lg flex align-cente justify-center' %>
+    <div class='flex flex-col gap-4 my-6'>
       <% @departments.each do | department | %>
         <div class='bg-slate-100 shadow-xl rounded-lg'>
           <% if department.cover.attached? %>
             <%= image_tag department.cover, class: 'object-cover rounded-t-xl w-full'%>
-          <% end %> 
+          <% end %>
           <div class='flex flex-col gap-2 m-3'>
             <div class='flex justify-between'>
-              <%= link_to department.name, department_path(department), class: 'font-semibold text-xl'  %>            
+              <%= link_to department.name, department_path(department), class: 'font-semibold text-xl'  %>
               <span class=''><%= department.employees_count %> employees</span>
             </div>
             <div class='flex gap-2 '>
@@ -20,7 +18,7 @@
               <%= link_to "destroy", department_path(department), data: {
                 turbo_method: :delete, turbo_confirm: 'Are you sure!' }, class: 'text-red-300 py-2 justify-self-end'  %>
             </div>
-          </div>   
+          </div>
         </div>
       <% end %>
     </div>
