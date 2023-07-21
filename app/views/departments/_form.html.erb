@@ -1,0 +1,21 @@
+<%= form_with model: department , class: 'form' do |form| %>
+  <div class='input-form'>
+    <%= form.label :name, class: 'label' %>
+    <div>
+      <%= form.text_field :name, class: 'input'%>
+    </div>
+  </div>
+  <div class='input-form'>
+    <%= form.label :description , class: 'label' %>
+    <div>
+      <%= form.text_field :description, class: 'input' %>
+    </div>
+  </div>
+  <div>
+    <%= form.label :cover, class: 'label' %>
+    <div>
+      <%= form.file_field :cover, accept: 'image/png, image/jpeg' %>
+    </div>
+  </div>
+  <%= form.submit class: 'btn btn-primary' %>
+<% end %>
